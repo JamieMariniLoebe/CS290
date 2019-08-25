@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script>
+        function ping(e) {
+            e.preventDefault();
+            var req = new XMLHttpRequest();
+            var form = document.getElementById("stuff");
+            var data  = new FormData(form);
+            var json = {};
+            Array.from(data.entries()).forEach(function (pair) {
+               json[pair[0]] = pair[1];
+            });
+            req.onload = function() {
+                console.log(req.response);
+            }
+            req.open("POST", "http://httpbin.org/post", true);
+            req.setRequestHeader('Content-Type', 'application/json')
+            req.send(JSON.stringify(json));
+        }
+                
+    </script>
+  </head>
+  <body>
+    <form id="stuff" action="http://httpbin.org/post" method="POST" onsubmit="ping(event)">
+        <input type="text" name="data">
+        <input type="text" name="data2">
+        <input type="text" name="data3">
+        <input type="submit">
+    </form>
+  </body>
+</html>
