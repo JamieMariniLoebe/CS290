@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Lesson</title>
+</head>
+
+<body>
+  <h1>{{method}} Request Received</h1>
+  {{!-- Check if model has query property --}}
+  {{#if query}}
+  <p>Query Data</p>
+  <table>
+    {{!-- Initial header row --}}
+    <tr>
+      <td>Property Name</td>
+      <td>Property Value</td>
+    </tr>
+    {{#each query}}
+    <tr>
+      <td>{{@key}}</td>
+      <td>{{this}}</td>
+    </tr>
+    {{/each}}
+  </table>
+  {{/if}}
+  {{!-- Repeat for the body property of the model --}}
+  {{#if body}}
+  <p>Body Data</p>
+  <table>
+    <tr>
+      <td>Property Name</td>
+      <td>Property Value</td>
+    </tr>
+    {{#each body}}
+    <tr>
+      <td>{{@key}}</td>
+      <td>{{this}}</td>
+    </tr>
+    {{/each}}
+  </table>
+  {{/if}}
+</body>
+
+</html>
