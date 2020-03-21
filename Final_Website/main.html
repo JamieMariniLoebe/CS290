@@ -1,27 +1,245 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-<title>WallyWorld</title>
-<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
-body {
-  font-family: Arial, Helvetica, sans-serif;
+  <title>Jolie and Wally</title>
+  <!--I used w3 schools as well as stack overflow for help when implementing this website. However the photo carousel is not working and the code may as well be moot now as I have spent so much time tinkering with it to no avail. I have left it as is to avoid making any further errors with the program. -->
+
+  <script> src="Website.js"</script>
+  <style> 
+
+
+.slideshow-container {
+  max-width: 1000px;
+  position: relative;
+  margin: auto;
 }
+
+.mySlides {
+  display: none;
+}
+
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -18px;
+  padding: 20px;
+  transition: 0.6s;
+  border-radius: 0 3px 3px 0;
+  user-select:none;
+
+  }
+
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+.prev:hover, .next:hover {
+  background-color: grey;
+}
+
+.text {
+  color: black;
+  font-size: 13px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom:8px;
+  width: 100%;
+  text-align: center;
+}
+
+.numbertext {
+  color: grey;
+  font-size: 10px;
+  padding: 8px 12px;
+}
+
+.dot {
+  cursor: pointer;
+  height:15px;
+  width: 15px;
+  background-color: black;
+  border-radius: 50%;
+  display: inline-block;
+  transition:0.6s ease;
+
+}
+
+.active, .dot:hover {
+  background-color #717171;
+}
+
+
+#Created {
+  font-size: 15px;
+}
+
+body {
+  background-color: lightblue;
+}
+
+#Border {
+  border: solid black;
+  border-width: thin;
+  padding: -20px;
+}
+
+
+#About {
+  font-size: 20px;
+  display: inline-block;
+  word-wrap: break-word;
+  text-align: justify;
+  padding-left: 300px;
+  padding-right: 225px;
+  
+}
+
+.topnav {
+  overflow: hidden;
+  background-color: white;
+}
+
+.topnav a{
+  float: center;
+  color: black;
+  text-align: center;
+  padding: 15px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.topnav a.active {
+  background-color: #4CAF50;
+  color: white;
+} 
+
 </style>
 </head>
+
 <body>
+  
+    <div class="topnav" style = "text-align: center;">
+      <a class="active" href="MainPage.html">Home</a>
+      <a href="Jolie.html">Jolie</a>
+      <a href="Wally.html">Wally</a>
+      <a href="Max.html">Mr. Max</a>
+    </div>
 
-<h1>The World of Jolie and Wally</h1>
-<p>Created by Jamie Loebe</p>
+<h1 align ="center">The World of Jolie and Wally</h1>
+<h3 id = "Created" align = "center"> Created by Jamie Loebe</h3>
+<p align = "center">This is the story of 2 Westies living in Illinois</p>
 
-<div class="sidenav">
-  <ul>
-    <li><a href="Subpage1.html">History of Jolie</a></li>
-    <li><a href="Subpage2.html">History of Wally</a></li>
-    <li><a href="Subpage3.html">Wally and Jolie together</a></li>
-  </ul>
+<br>
+<br>
+<br>
+<br>
+
+<div class="slideshow-container" style="text-align:center">
+  <div class="MySlides">
+    <div class="numbertext"> </div>
+    <a href="https://imgur.com/0jLVElE"><img src="https://i.imgur.com/0jLVElE.jpg" title="source: imgur.com" style="width:20%"/></a>
+    <div class="text"></div>
+  </div>
+  
+  <div class="MySlides">
+    <div class="numbertext"> </div>
+    <img src="" style="width: 50%">
+    <div class=text> </div>
+  </div>
+
+  <div class="MySlides">
+    <div class="numbertext"> </div>
+    <img src="" style="width:50%">
+    <div class="text"></div>
+  </div>
+
+  <div class="MySlides">
+    <div class="numbertext"> </div>
+    <img src="" style="width:50%">
+    <div class="text"></div>
+  </div>
+
+  <a class="prev" click="plusSlides(-1)"> </a>
+  <a class="next" click="plusSlides(1)"></a>
 </div>
+
+<br>
+
+<div style="text-align:center">
+  <span class="dot" click="currentSlide(1)"> </span>
+  <span class="dot" click="currentSlide(2)"> </span>
+  <span class="dot" click="currentSlide(3)"> </span>
+  <span class="dot" click="currentSlide(4)"> </span>
+</div>
+
+  <br>
+  
+  <div style="margin: 10px 220px; border:5px;border-style:solid;border-color:red;">
+  &nbsp;
+  <div >
+    <p style="text-align:center" > Enter your e-mail below to subscribe to receive updates! </p>
+    <form name="EmailForm" action="http://web.engr.oregonstate.edu/~zhangluy/tools/class-content/form_tests/check_request.php" onsubmit="return inputName()" method="post" style="text-align:center">
+      E-mail: <input type="text" name="Email">
+      <input type="submit" value="Subscribe">
+    </form>
+
+  &nbsp;
+  </div>
+</div>
+    <span id = "About" style="display:inline-block">Here we will talk about the pups! Jolie and Olivier (Wally for short) are two Westies living in suburban Illinois. They are crazy and like to have a lot of fun. They also love to play with each other and their parents! Here I have put together a few different photo carousels and slideshows for you to enjoy seeing them at their greatest. There are also 3 more pages to this website. They are as follows:
+      
+      <ol>
+        <li> An About Me page for Jolie </li>
+          <ul>
+            <li> This page includes information about Jolie. </li>
+            <li> Pictures of her as a puppy and her 'formative years'! </li>
+            <br>
+            
+          </ul>
+        
+        <li> An About Me page for Olivier </li>
+          <ul> 
+            <li> This includes basic information on Wally </li>
+            <li> It also has pictures of him as a puppy and his ancestry!! </li>
+          
+            </br>
+          </ul>
+      
+        <li> A page dedicated to their life together </li>
+          <ul>
+            <li> This has just a ton of pictures of them playing and hanging out together! </li>
+            <br>
+          </ul>
+     
+      <li> A BONUS PAGE: Mr. Maxwell, A.K.A Frank The Tank. </li>
+        <ul>
+          <li> Mr. Max is the 'uncle' of Jolie and Wally </li>
+          <li> He is my parents' dog, and you will find much more info on the link for him above! </li>
+        </ul>
+      
+      </ol>
+      
+    With all of that said, I hope you very much enjoy my webpage, and go adopt a dog! Plenty of animals need rescue, just like Max, so follow one of the links below to find your best friend!
+        
+    </span>
+
+     &nbsp;
+    <div style="text-align:center"> <strong>Please click the button below to download a PDF about rescuing animals or click the link below that to adopt! </strong></div>
+    <form method="get" action="https://www.thehumanesociety.org/wp-content/uploads/2013/04/Dog-Adoption-Application.pdf" style="text-align:center">
+      <button type="submit">Download Rescue PDF </button>
+    </form>
+    <div style="text-align:center;">
+    <a href="https://www.adoptapet.com/" style= "text-align:center"> Rescue an animal today! </a>
+    </div>
 
 
 </body>
